@@ -27,14 +27,11 @@ class Dados:
         dados=[]
         if self.tipo == 'csv':
             dados = self.leitura_csv()
-
         elif self.tipo == 'json':
-            dados = self.leitura_json()
-        
+            dados = self.leitura_json()        
         elif self.tipo == 'list':
             dados = self.path
-            self.path = 'lista em memória'
-        
+            self.path = 'lista em memória'        
         return dados
     
     def get_columns(self):
@@ -47,12 +44,12 @@ class Dados:
             for old_key, value in old_dict.items():
                 dict_temp[key_mapping[old_key]] = value
             new_dados.append(dict_temp)
-
         self.dados = new_dados
         self.nome_colunas = self.get_columns()
     
     def size_data(self):
         return len(self.dados)
+
 
     def join_data(dadosA, dadosB):
         combined_list=[]
